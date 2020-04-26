@@ -33,10 +33,10 @@ def find_coherent( data ) :
 
         for peer, as_path, update_ts in annouce :
             incoherent_as_path = as_path.strip().split(" ")  
-            n = len(incoherent_as_path)
+            incoherent_as_path_length = len(incoherent_as_path)
             is_incoherent = False
 
-            for i in range(n) :
+            for i in range(incoherent_as_path_length) :
                 if incoherent_as_path[i] in asn_withdraw :
                     incoherent_as_path[i] = "!"+incoherent_as_path[i]
                     is_incoherent = True
