@@ -4,7 +4,7 @@ sys.path.insert(1, 'module')
 from data import Data
 from module.thres import find_thres
 from module.lifespan import find_lifespan
-# from module.coherent import find_coherent
+from module.coherent import find_coherent
 from module.proof import find_proof 
 
 if __name__ == "__main__" :
@@ -16,8 +16,8 @@ if __name__ == "__main__" :
         find_thres( Data(Y, M, npts=True) )
     elif task == 'lifespan' :
         find_lifespan( Data(Y, M, npts=True) )
-    # elif task == 'coherent' :
-    #     find_coherent( data )
+    elif task == 'coherent' :
+        find_coherent( Data(Y, M, record=True, proof=True) )
     elif task == 'proof' :
         find_proof( Data(Y, M, npts=True) )
     

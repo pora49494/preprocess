@@ -40,8 +40,12 @@ delta(i), avg(Np(ts), {R,D}
 
 #### Path coherent
 ```
-WIP
+first line  : #incoherent_path / #BGP zombies
+lines after : zombie ts | prefix | peer IP | AS_PATH* | record ts
+
+1389742200|2.92.173.0/24|187.16.218.21|52888 1251 20080 !6762 3216 3216 8402|1389715193
 ```
+- ASN in AS_PATH that is not coherent is shown by !ASN
 
 #### Proof 
 ```
