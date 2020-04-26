@@ -5,6 +5,7 @@ from data import Data
 from module.thres import find_thres
 from module.lifespan import find_lifespan
 # from module.coherent import find_coherent
+from module.proof import find_proof 
 
 if __name__ == "__main__" :
     task = sys.argv[1]
@@ -17,3 +18,6 @@ if __name__ == "__main__" :
         find_lifespan( Data(Y, M, npts=True) )
     # elif task == 'coherent' :
     #     find_coherent( data )
+    elif task == 'proof' :
+        find_proof( Data(Y, M, npts=True) )
+    

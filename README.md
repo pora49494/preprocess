@@ -42,3 +42,9 @@ delta(i), avg(Np(ts), {R,D}
 ```
 WIP
 ```
+
+#### Proof 
+```
+ts | prefix | proof | total_peers
+```
+- proof refers to the Np(ts) starting from drop, and end at ts+ts_withdrawal
