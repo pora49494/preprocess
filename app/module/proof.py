@@ -37,7 +37,7 @@ def find_proof ( data ) :
             else :
                 i += 1
  
-    f = open(f"/result/{data.year}-{data.month}-zombies.txt", "w")
+    f = open(f"/result/{data.year}-{data.month}-zombies-proof.txt", "w")
     f.write("\n".join(evidence))
     f.close()
     
