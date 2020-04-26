@@ -1,5 +1,3 @@
-from module.data import Data
-
 def _find_stable (row) :
     n = len(row)
     prev = row[0]
