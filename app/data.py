@@ -58,10 +58,13 @@ class Data :
             if i == 2 or i == 8 or i == 9 or i == 17 :
                 continue
             rrc = "{:02d}".format(i)
-            file_name = f"/_data/{self.year}-{self.month}-zombie-record-finder-rrc{rrc}.json" 
-            with open(file_name)  as f:
-                record = json.load(f)
-                data.append(record)
+            try :
+                file_name = f"/_data/{self.year}-{self.month}-zombie-record-finder-rrc{rrc}.json" 
+                with open(file_name)  as f:
+                    record = json.load(f)
+                    data.append(record)
+            except :
+                pass 
         return data
 
     @get_data_from
