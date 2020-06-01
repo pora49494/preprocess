@@ -6,6 +6,7 @@ from module.lifespan import find_lifespan
 from module.coherent import find_coherent
 from module.proof import find_proof 
 from module.source import find_source 
+from module.peers import find_peers
 
 if __name__ == "__main__" :
     task = sys.argv[1]
@@ -22,3 +23,5 @@ if __name__ == "__main__" :
         find_proof( Data(Y, M, npts=True) )
     elif task == 'source' :
         find_source( Data(Y, M, record=True) )
+    elif task =='max-peer' :
+        find_peers(Data(Y, M, npts=True))
