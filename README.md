@@ -52,3 +52,28 @@ lines after : zombie ts | prefix | peer IP | AS_PATH* | record ts
 ts | prefix | proof | total_peers
 ```
 - proof refers to the Np(ts) starting from drop, and end at ts+ts_withdrawal
+
+
+#### Max-peer 
+We want to find the number of prefix with lower peer count, to find how many percentage it occupies the total data.
+```
+# TO-DO
+```
+
+#### Correlationship
+- For knowing better the characteristic of zombie AS
+```json
+{
+    asn: {
+        zombie: {
+            #zombie: int,
+            #normal: int1
+        },
+    }, 
+}
+```
+
+#### Rank 
+- for finding the basic information of investigated AS
+    - there are 2 files: `info` and `missing`
+    - run using environment value

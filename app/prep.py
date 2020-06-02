@@ -7,11 +7,16 @@ from module.coherent import find_coherent
 from module.proof import find_proof 
 from module.source import find_source 
 from module.peers import find_peers
+from module.corre import find_corre
+from module.rank import find_rank
 
 if __name__ == "__main__" :
     task = sys.argv[1]
-    Y = int(sys.argv[2])
-    M = int(sys.argv[3])
+    if len(sys.argv) == 4 :
+        Y = int(sys.argv[2])
+        M = int(sys.argv[3])
+    elif len(sys.argv) == 3 :
+        env = int(sys.argv[2]) 
     
     if task == 'thres' :
         find_thres( Data(Y, M, npts=True) )
@@ -23,5 +28,9 @@ if __name__ == "__main__" :
         find_proof( Data(Y, M, npts=True) )
     elif task == 'source' :
         find_source( Data(Y, M, record=True) )
-    elif task =='max-peer' :
+    elif task == 'max-peer' :
         find_peers(Data(Y, M, npts=True))
+    elif task == 'corre' :
+        find_corre(Data(Y,M,record=True))
+    elif task == 'rank' :
+        find_rank(env)
