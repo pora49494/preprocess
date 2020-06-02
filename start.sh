@@ -9,11 +9,11 @@ do
     fi
     
     docker run -d --rm \
-        --name "${TOPIC_HEADER}_lifespan" \
+        --name "${TOPIC_HEADER}_${1}" \
         -v "${PWD}"/archive/:/archive \
         -v "${PWD}"/app:/app  \
         -v "${PWD}"/result/"${1}":/result \
-        python:3.6-alpine3.9 \
+        python:3.6-alpine3.9-request \
         python3 /app/prep.py ${1} ${YEAR_ENV} ${MONTH_ENV}
     
     while :
