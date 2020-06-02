@@ -18,7 +18,7 @@ do
     
     while :
     do
-        if [[ $(docker ps -qf "name=_lifespan" | wc -l) -lt 6 ]]; then 
+        if [[ $(docker ps -qf "name=_${1}" | wc -l) -lt 6 ]]; then 
              break
         fi
         sleep 30
