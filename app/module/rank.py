@@ -2,7 +2,7 @@ import requests
         
 def find_rank(env) :
     f = open(f'/archive/_env/{env}', 'r')
-    test=0 
+    
     for _asn in f.readlines() :
         try :
             asn = _asn.strip()
@@ -23,10 +23,6 @@ def find_rank(env) :
             result.write( f"{asn} {prefix_num} {length}\n")
             result.close()
 
-            test+=1
-            if test > 10 :
-                break     
-            
         except Exception as e:
             missing = open(f'/result/missing.txt', 'a+')
             missing.write(f"{asn} {str(e)}\n")
