@@ -24,8 +24,6 @@ def find_lifespan (data) :
         
         thres = int(total_peers*0.5)
         
-        is_infected = False
-        infected_at = None 
         n = len(row)
         i = 1
         
