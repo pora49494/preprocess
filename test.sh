@@ -5,4 +5,4 @@ docker run -it --rm \
     -v "${PWD}"/result/test:/result \
     --workdir="/app/" \
     --entrypoint="/bin/sh" \
-    python:3.6-alpine3.9
+    python:3.6-alpine3.9-request
