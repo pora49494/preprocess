@@ -64,7 +64,10 @@ class Data :
                     record = json.load(f)
                     data.append(record)
             except :
-                pass 
+                f = open("/result/missing.txt", "a+") 
+                f.write( f"{self.year} {self.month} {rrc}\n")
+                f.close()
+                
         return data
 
     @get_data_from
