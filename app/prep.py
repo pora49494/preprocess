@@ -8,7 +8,7 @@ from module.proof import find_proof
 from module.source import find_source 
 from module.peers import find_peers
 from module.corre import find_corre
-from module.rank import find_rank
+from module.asn import find_asn
 
 if __name__ == "__main__" :
     task = sys.argv[1]
@@ -32,5 +32,5 @@ if __name__ == "__main__" :
         find_peers(Data(Y, M, npts=True))
     elif task == 'corre' :
         find_corre(Data(Y,M,record=True))
-    elif task == 'rank' :
-        find_rank(env)
+    elif task == 'asn-info' :
+        find_asn(env)

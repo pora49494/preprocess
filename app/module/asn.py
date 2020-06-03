@@ -1,6 +1,6 @@
 import requests
         
-def find_rank(env) :
+def find_asn(env) :
     f = open(f'/archive/_env/{env}', 'r')
     
     for _asn in f.readlines() :
