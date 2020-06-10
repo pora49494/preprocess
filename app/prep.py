@@ -9,6 +9,8 @@ from module.source import find_source
 from module.peers import find_peers
 from module.corre import find_corre
 from module.asn import find_asn
+from module.record_num import find_record_num
+from module.as_path_length import find_as_path_length
 
 if __name__ == "__main__" :
     task = sys.argv[1]
@@ -16,7 +18,7 @@ if __name__ == "__main__" :
         Y = int(sys.argv[2])
         M = int(sys.argv[3])
     elif len(sys.argv) == 3 :
-        env = int(sys.argv[2]) 
+        env = sys.argv[2] 
     
     if task == 'thres' :
         find_thres( Data(Y, M, npts=True) )
@@ -34,3 +36,7 @@ if __name__ == "__main__" :
         find_corre(Data(Y,M,record=True))
     elif task == 'asn-info' :
         find_asn(env)
+    elif task == 'record-num':
+        find_record_num(env)
+    elif task == 'as-path-length' :
+        find_as_path_length(env)
