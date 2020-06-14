@@ -52,7 +52,7 @@ def write_record(env, res_record, res_as_path):
     result_as_path.close()
 
 def find_bgp_update(env) :
-    f = open(f'/archive/_env-prefix/record-{env}', 'r')
+    f = open(f'/archive/_env-prefix/env-{env}', 'r')
     
     for _prefix in f.readlines() :
         prefix = _prefix.strip()
