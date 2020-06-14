@@ -28,11 +28,14 @@ def find_as_path_length(env) :
                             continue
                         prev = asn 
                         as_path_length += 1
-
-                res.append(str(as_path_length/counter))
+                if counter == 0 :
+                    res.append("-1")
+                else :
+                    res.append(str(as_path_length/counter))
                 
             result.write (",".join(res) + "\n")
-        
+            result.flush()
+
         except Exception as e:
             error = open(f'/result/error.txt', 'a+')
             error.write(f"{_prefix} {str(e)}\n")

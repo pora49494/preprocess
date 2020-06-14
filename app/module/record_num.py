@@ -10,7 +10,7 @@ def find_record_num(env) :
         res = [prefix] 
         try :
             for month in range(10,13) :
-                url = f"https://stat.ripe.net/data/bgplay/data.json?endtime=2019-{month}-20T00%3A00%3A00&resource={netmask}%2F{subnet}&starttime=2019-{month}-10T00%3A00%3A00&unix_timestamps=TRUE"
+                url = f"https://stat.ripe.net/data/bgplay/data.json?endtime=2018-{month}-20T00%3A00%3A00&resource={netmask}%2F{subnet}&starttime=2018-{month}-10T00%3A00%3A00&unix_timestamps=TRUE"
                 
                 data = requests.get( url )
                 data = data.json()
@@ -18,7 +18,9 @@ def find_record_num(env) :
                 res.append(str(change_number))
                 
             result.write (",".join(res) + "\n")
-        
+            print(",".join(res) + "\n")
+            result.flush()
+
         except Exception as e:
             error = open(f'/result/error.txt', 'a+')
             error.write(f"{_prefix} {str(e)}\n")
