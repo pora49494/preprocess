@@ -9,8 +9,7 @@ from module.source import find_source
 from module.peers import find_peers
 from module.corre import find_corre
 from module.asn import find_asn
-from module.record_num import find_record_num
-from module.as_path_length import find_as_path_length
+from module.bgp_update import find_bgp_update
 
 if __name__ == "__main__" :
     task = sys.argv[1]
@@ -36,7 +35,5 @@ if __name__ == "__main__" :
         find_corre(Data(Y,M,record=True))
     elif task == 'asn-info' :
         find_asn(env)
-    elif task == 'record-num':
-        find_record_num(env)
-    elif task == 'as-path-length' :
-        find_as_path_length(env)
+    elif task == 'bgp-update':
+        find_bgp_update(env)
