@@ -10,6 +10,7 @@ from module.peers import find_peers
 from module.corre import find_corre
 from module.asn import find_asn
 from module.bgp_update import find_bgp_update
+from module.unique import find_unique
 
 if __name__ == "__main__" :
     task = sys.argv[1]
@@ -37,3 +38,14 @@ if __name__ == "__main__" :
         find_asn(env)
     elif task == 'bgp-update':
         find_bgp_update(env)
+    elif task == 'unique':
+        group_size = 3
+        start_data = int(env)*group_size
+        data = []
+        for i in range(group_size):
+            Y = (i+start_data)//12+2014
+            M = 1+( (i+start_data) %12 )
+            data.append( Data(Y, M, npts=True, proof=True) )
+        find_unique( data, env)
+
+        
